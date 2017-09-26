@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metta charset="utf-8">
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var cuenta = 0;
+    do{
+      var precio = prompt("Introduce un precio");
+      var rebaja = prompt("Introduce una rebaja");
+      cuenta ++;
+      precio = parseInt(precio);
+      rebaja = parseInt(rebaja);
+      if(cuenta > 2){
+        alert("Veo que no quieres instertar valores, que tenga un buen día");
+        break;
+      }
+    }while(isNaN(precio)||precio<1)
+
+      function calculo(precio,rebaja) {
+
+        return precio *(rebaja/100);
+      }
+      var total = calculo(precio,rebaja);
+      if(cuenta < 2){
+      alert(precio-total);
+      }
+      document.write("<h2 align=center>Valores</h2> <br>Precio: " + precio
+      + "<br>Rebaja: " + (rebaja/100) + "<br>Total: " + (precio-total));
+    </script>
+  </body>
+</html>

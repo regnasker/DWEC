@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio5</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      "use strict"
+        function operacion() {
+        var dato = prompt("Introduce una operacion: ");
+        var cal = eval();
+        if(isNaN(cal) || !isFinite(cal)){
+          alert("ERROR TU NUMERO ES INFINITO O NO TIENE VALOR");
+        }else{
+          document.write("<h1 align=center>" + cal + "</h1>");
+        }
+      }
+      operacion();
+    </script>
+  </body>
+</html>

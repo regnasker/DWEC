@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio6</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var array=['Hola', 2, 3.5, false, 'hola holita', 2000, 0, 2.3, true, 'jeje'];
+      var array2=[10];
+      for (var i = 0; i < array.length; i++) {
+        document.write("Indice " + i + " contenido " + array[i] + " tipo de dato " + typeof(array[i]) + "<br>");
+      }
+      document.write("<hr>");
+
+      for (var i = 0; i < array.length; i++) {
+        var a = Number(array[i])
+        if (!isNaN(a)) {
+          array2[i] = a;
+          document.write("Indice " + i + " contenido " + array2[i] + " tipo de dato " + typeof(array2[i]) + "<br>");
+        }else{
+          document.write("No añadido<br>");
+        }
+      }
+    </script>
+  </body>
+</html>

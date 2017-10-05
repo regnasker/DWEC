@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio8</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //var str1 = prompt("Introduce una cadena de carácteres");
+      //var str2 = prompt("Introduce otra cadena de caráceteres");
+      //
+      // function funStrings(str1,str2) {
+      //   if (typeof(str1 == "string") && typeof(str2 == "string")) {
+      //     document.write(str1 + " " + str2);
+      //
+      //   }
+      //   else{
+      //     document.write("nope");
+      //   }
+      // }
+      // funStrings(str1,str2);
+
+      function concatena(str1, str2) {
+        if (typeof(str1 == "string") && typeof(str2 == "string")) {
+          return str2 + " " + str1;
+        }
+        else{
+          document.write("nope");
+        }
+      }
+
+      function saludador(){
+        var str1 = prompt("Introduce tu nombre");
+        var dia = "Buenos dias";
+        return concatena(str1, dia);
+      }
+
+      alert(saludador());
+
+
+    </script>
+  </body>
+</html>

@@ -21,21 +21,19 @@
       // funStrings(str1,str2);
 
       function concatena(str1, str2) {
-        if (typeof(str1 == "string") && typeof(str2 == "string")) {
+        if (typeof(str1) == "string" && typeof(str2) == "string") {
           return str2 + " " + str1;
         }
         else{
           document.write("nope");
         }
       }
-
-      function saludador(){
-        var str1 = prompt("Introduce tu nombre");
+      function saludador(concatena, nombre){
         var dia = "Buenos dias";
-        return concatena(str1, dia);
+        return concatena(dia, nombre);
       }
-
-      alert(saludador());
+      var nombre = "Ruben";
+      alert(saludador(concatena,nombre));
 
 
     </script>

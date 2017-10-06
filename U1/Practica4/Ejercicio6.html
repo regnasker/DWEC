@@ -7,17 +7,17 @@
   <body>
     <script type="text/javascript">
       var array=['Hola', 2, 3.5, false, 'hola holita', 2000, 0, 2.3, true, 'jeje'];
-      var array2=[10];
+      var array2=[];
       for (var i = 0; i < array.length; i++) {
-        document.write("Indice " + i + " contenido " + array[i] + " tipo de dato " + typeof(array[i]) + "<br>");
+        document.write("Indice " + i + " contenido " + array[i] + " tipo de dato " + typeof(array[i]) + " y de longitud " + array.length +"<br>");
       }
       document.write("<hr>");
-
+      var j = 0;
       for (var i = 0; i < array.length; i++) {
-        var a = Number(array[i])
-        if (!isNaN(a)) {
-          array2[i] = a;
-          document.write("Indice " + i + " contenido " + array2[i] + " tipo de dato " + typeof(array2[i]) + "<br>");
+        if (!isNaN(array[i])) {
+          array2[j] = Number(array[i]);
+          document.write("Indice " + j + " contenido " + array2[j] + " tipo de dato " + typeof(array2[j]) + " y de longitud " + array2.length + "<br>");
+          j++;
         }else{
           document.write("No añadido<br>");
         }

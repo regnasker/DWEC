@@ -9,12 +9,12 @@
       var cadena1 = prompt("Cadena 1: ");
       var cadena2 = prompt("Cadena 2: ");
       var saludo = function(cadena1,cadena2){
-        if(cadena1>cadena2){
+        if(cadena1.length>cadena2.length){
           console.log("cadena 1: " + cadena1.length);
         }else {
           console.log("cadena 2: " + cadena2.length);
         }
-        if(typeof cadena1 !== "string" || typeof cadena2 !== "string"){
+        if(typeof (cadena1) !== "string" || typeof (cadena2) !== "string"){
           alert("¡¡ERROR 404!!");
         }else {
           document.write("Cadena 1: " + cadena1.length + "<br>");

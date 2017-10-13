@@ -1,8 +1,7 @@
 function rnd(){
-  do{
-    var n = Math.random()*10;
-  }while(n<6||n>1);
-  var num = parseInt(n);
+
+  var n = Math.floor(Math.random()*6)+1;
+  return num = parseInt(n);
 }
 function dado(rnd){
   switch (rnd) {

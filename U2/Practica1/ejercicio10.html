@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio10</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Persona(Nombre, Apellidos){
+      this.Nombre = Nombre || "Anónimo";
+      this.Apellidos = Apellidos;
+      this.Saludar = function() {
+      console.log("Hola me llamo " + this.Nombre + this.Apellidos);
+      }
+    }
+    Persona.prototype.Edad = Math.floor((Math.random()*100)+1);
+
+    function Alumno(Nombre, Apellidos, Estudios, Nota){
+      Persona.call(this,Nombre, Apellidos);
+      this.Estudios = Estudios;
+      this.NotaMedia = Nota.toFixed(2);
+      this.Recuperar = function(){
+        if (this.NotaMedia < 5)
+        this.NotaMedia = 5;
+      }
+      this.Contraseña = function(){
+
+        return this.Nombre.charAt(0).concat(this.Apellidos.substring(
+          this.Apellidos.indexOf(0),this.Apellidos.indexOf(" ")).toLowerCase().
+          replace("e","3").replace("a","4")).concat(this.Nombre.length);
+
+      }
+    }
+    var Lista = [3];
+    Lista[0] = new Alumno("Juanito", "Perez Tonel", "Matemáticas", 4.5);
+    Lista[1] = new Alumno("Roberto", "Paten Lopez", "Matemáticas", 9);
+    Lista[2] = new Alumno("Pepe", "Castaño Pinar", "Matemáticas", 6.3);
+
+    for (var i = 0; i < Lista.length; i++) {
+      console.log("El estudiante de "+ Lista[i].Estudios + " ,Nombre: " + Lista[i].Nombre
+      + " ,1er apellido: " + Lista[i].Apellidos.substring(Lista[i].Apellidos.indexOf(0),Lista[i].Apellidos.lastIndexOf(" "))+
+      " ,2º apellido:" + Lista[i].Apellidos.substr(Lista[i].Apellidos.search(" "))
+      + " tiene una nota media de " + Lista[i].NotaMedia);
+      console.log("Pass: " + Lista[i].Contraseña());
+    }
+    </script>
+  </body>
+</html>

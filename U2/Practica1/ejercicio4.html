@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Persona(Nombre, Apellido1, Apellido2 ){
+        this.Nombre = Nombre || "Anónimo";
+        this.Apellido1 = Apellido1;
+        this.Apellido2 = Apellido2;
+        this.Saludar = function() {
+        console.log("Hola me llamo " + this.Nombre + this.Apellido1 + this.Apellido2);
+        }
+      }
+      var Ruben = new Persona("Ruben ","Tomas ","Araque");
+      var Anonimo = new Persona("","","");
+
+      console.log(Anonimo.Saludar());
+      console.log(Ruben.Saludar());
+      console.log(Ruben instanceof(Persona));
+      console.log(Anonimo instanceof(Persona));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio5</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Persona(Nombre, Apellido1, Apellido2 ){
+      this.Nombre = Nombre || "Anónimo";
+      this.Apellido1 = Apellido1;
+      this.Apellido2 = Apellido2;
+      this.Saludar = function() {
+      console.log("Hola me llamo " + this.Nombre + this.Apellido1 + this.Apellido2);
+      }
+    }
+    Persona.prototype.Edad = Math.floor((Math.random()*100)+1);
+    function Alumno(Nombre, Apellido1, Apellido2, Estudios, Nota){
+      Persona.call(this,Nombre, Apellido1, Apellido2);
+      this.Estudios;
+      this.NotaMedia = Nota.toFixed(2);
+      this.Recuperar = function(){
+        if (this.NotaMedia < 5)
+        this.NotaMedia = 5;
+      }
+    }
+    var Lista = [3];
+    Lista[0] = new Alumno("Juanito", "Perez", "Tonel", "Matemáticas", 4.5);
+    Lista[1] = new Alumno("Roberto", "Paten", "Lopez", "Matemáticas", 9);
+    Lista[2] = new Alumno("Pepe", "Castaño", "Pinar", "Matemáticas", 6.3);
+
+    console.log(Lista.sort(function(n1,n2){ return n1.NotaMedia - n2.NotaMedia}));
+    </script>
+  </body>
+</html>

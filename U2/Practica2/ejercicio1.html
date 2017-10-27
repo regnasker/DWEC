@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var fecha = new Date();
+      console.log(fecha.getDate());
+      console.log(fecha.getMonth()+1);
+      console.log(fecha.getFullYear());
+      var array = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+      console.log(array[fecha.getDay()-1]);
+      console.log(fecha.toLocaleDateString());
+      console.log(fecha.getHours());
+      console.log(fecha);
+
+
+    </script>
+  </body>
+</html>

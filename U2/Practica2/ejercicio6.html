@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio6</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var array = [12,"hola",false];
+      array = array.map(function(n){return Number(n)});
+      console.log(array);
+      array = array.filter(function(n){return isNaN(n)==false});
+      console.log(array);
+    </script>
+  </body>
+</html>

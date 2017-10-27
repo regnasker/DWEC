@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var array = [1,2,3,4];
+      array.push(5,6);
+      array.unshift(-1,0,0.5);
+      console.log(array);
+      console.log(array.toString());
+      console.log(array.splice(3-6)+" --> Quitar valores sin crear un nueov arrat con esos valores");
+      console.log("valores quitados "+array);
+      array.splice(4,0,10);
+      array.splice(5,0,25);
+      console.log("10 y 25 en ultimo y penúlitmo lugar " + array);
+      console.log(array.join("==>"));
+      var array2 = array;
+      array2.sort(function(n1,n2){return n2-n1;});
+      console.log(array);
+      console.log(array2);
+      console.log(array.indexOf(25));
+      console.log(array.indexOf(404));
+            // 4
+      console.log(array.every(function(n){return isNaN(n) == false;}));
+      console.log(array.some(function(n){return n<20;}));
+      var array3 = [4,21,33,12,9,54];
+      function sumarArray(total,n){
+        return total+n;
+      }
+      console.log(array3.reduce(sumarArray));
+</script>
+    </script>
+  </body>
+</html>

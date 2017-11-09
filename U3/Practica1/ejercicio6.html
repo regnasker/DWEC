@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Crea elementos del DOM</title>
+<script type="text/javascript">
+onload = function creaDOM(){
+/*Aquí se escribe lo que sea necesario*/
+  var h1 = document.createElement("h1");
+  document.body.appendChild(h1);
+  h1.innerHTML = "TÍTULO";
+  h1.style.fontFamily = "Arial";
+  h1.style.color = "blue";
+
+  var im = document.createElement("img");
+  im.setAttribute("src","http://www.quieroimagenes.com/i/thm-regalos-caminando.jpg");
+  document.body.appendChild(im);
+  im.style.width = "50px";
+  im.style.height = "50px";
+}
+</script>
+</head>
+<body>
+</body>
+</html>

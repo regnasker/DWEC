@@ -1,7 +1,7 @@
 onload = function () {
   var a = document.body.children;
   var b = document.body.childNodes;
-  for (var i = 1; i < a.length; i++) {
+  for (var i = 0; i < a.length; i++) {
     console.log("Children: ");
     console.log(a[i]);
     console.log("Nodes: ")

@@ -1,4 +1,4 @@
-onload = function () {
+onload = function () { 
   var a = document.body.children;
   var b = document.body.childNodes;
   for (var i = 0; i < a.length; i++) {

@@ -10,19 +10,16 @@ function anadirElemento() {
   var d = document.createElement("div");
 
   var textoCaja = document.createTextNode(txt.value);
-  
-  if (txt.value && type.value != 0) {
-    if (document.body.getElementsByClassName(selector.value)[0]) {
 
-    } else {
+  if (txt.value && type.value != 0) {
+
       document.body.appendChild(d);
       miP.appendChild(textoCaja);
       d.appendChild(miP);
-      d.style.border= "2px solid "+ selector.value ;
+      // d.style.border= "2px solid "+ selector.value ;
       d.setAttribute("class",selector.value);
       miP.style.color = selector.value;
       miP.setAttribute("onclick","borrarElemento()");
-    }
   }else{
     alert("No has introducido un producto o no has seleccionado una categoría");
   }

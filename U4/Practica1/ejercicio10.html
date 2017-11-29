@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+    <body>
+    <div class="miDiv">
+      <img id="img" src="imagen1.jpg" width="200">
+    </div>
+    <select id="selector" name="elegir">
+      <option value="1" selected = "selected">Foto1</option>
+      <option value="2">Foto2</option>
+      <option value="3">Foto3</option>
+      <option value="4">Foto4</option>
+    </select>
+    <script type="text/javascript">
+    onload =  function(){
+    selector.addEventListener("change",cambiarImg);
+      function cambiarImg() {
+        var nuevaFoto = selector.value;
+        img.src = "imagen" + selector.value + ".jpg"
+      }
+    }
+    </script>
+  </body>
+</html>

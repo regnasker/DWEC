@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="https://pbs.twimg.com/profile_images/2456020510/image.jpg" alt="" width="150px">
+    <script type="text/javascript">
+      onkeypress = function (e) {
+        if (e.key == "-"&& document.getElementsByTagName('img')[0].width>=150) {
+          document.getElementsByTagName('img')[0].width -= 25;
+        }else if (e.key == "+" &&document.getElementsByTagName('img')[0].width<1024){
+          document.getElementsByTagName('img')[0].width += 25;
+        }else if (document.getElementsByTagName('img')[0].width > 1024) {
+          document.getElementsByTagName('img')[0].width = 1024;
+        }
+      }
+    </script>
+  </body>
+</html>

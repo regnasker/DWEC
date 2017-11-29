@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    div {
+    margin: auto;
+    width: 300px;
+    text-align: center;
+    }
+</style>
+  </head>
+  <body>
+    <div >
+      <img width="300px"src="https://i.ytimg.com/vi/swmuqGWgZCc/maxresdefault.jpg" alt="">
+      <a href="#nonavegar">Deshabilitar cambio de imagen</a>
+    </div>
+  </body>
+  <script type="text/javascript">
+  var miPick = document.getElementsByTagName('img')[0];
+  function dog() {
+    miPick.src = "https://i.ytimg.com/vi/Biald8QhKUQ/maxresdefault.jpg";
+  }
+  function dog2() {
+    miPick.src = "https://i.ytimg.com/vi/swmuqGWgZCc/maxresdefault.jpg";
+  }
+  miPick.addEventListener('mouseover',dog);
+  miPick.addEventListener('mouseout',dog2);
+
+  var miA = document.getElementsByTagName('a')[0];
+  miA.onclick = function (e) {
+    miPick.removeEventListener('mouseover',dog);
+    miPick.removeEventListener('mouseout',dog2);
+    e.preventDefault();
+  }
+
+  </script>
+</html>

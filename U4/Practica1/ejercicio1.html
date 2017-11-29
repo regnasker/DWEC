@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1</title>
+    <script type="text/javascript">
+    addEventListener("DOMContentLoaded", function () {
+      var miP = document.getElementsByTagName("p")[0];
+      miP.addEventListener('click',primerForma);
+      function primerForma(){
+        miP.innerHTML = "Esto a veces es un parrafo";
+      }
+    });
+    onload = function () {
+      var miDiv = document.getElementsByClassName("segunda")[0];
+      miDiv.oncontextmenu = function (e) {
+        e.preventDefault();
+        e.target.innerHTML="Esto es un div preventivo";
+      }
+    }
+    function tercera(){
+      var mih1 = document.getElementsByTagName("h1")[0];
+      mih1.innerHTML="Esto es un h1 cambiado";
+    }
+
+    </script>
+  </head>
+  <body>
+    <p>Esto es un parrafo</p>
+    <div class="segunda">
+      Esto es un div
+    </div>
+    <h1 onclick="tercera()">Esto es un h1</h1>
+    <h2 id="h2s"onmouseenter="h2s.innerHTML='Esto es un h2 con forma 4'">Esto es un h2</h2>
+    <h3 id="h3s">Esto es un h3</h3>
+    <script type="text/javascript">
+    var mih3 = document.getElementById('h3s');
+    mih3.ondblclick = function (e) {
+      e.target.innerHTML = "Esto es un h3 con doble click fomra 5";
+    }
+  </script>
+  </body>
+</html>

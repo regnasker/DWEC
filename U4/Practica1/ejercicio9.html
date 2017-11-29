@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="miDiv">
+
+    </div>
+    <script type="text/javascript">
+      window.onresize = function () {
+        document.getElementById("miDiv").innerHTML = "<p>Width: " + window.outerWidth + " Height: " + window.outerHeight + "<p>";
+      }
+    </script>
+  </body>
+</html>

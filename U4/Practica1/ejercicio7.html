@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    onload = function() {
+      var especial
+    onkeydown = function (e){
+       especial = e.altKey || e.ctrlKey || e.shiftKey || e.metaKey;
+      if (especial) {
+        switch (especial) {
+          case e.altKey: console.log("Has pulsado ALT");
+            break;
+          case e.ctrlKey:  console.log("Has pulsado CTRL");
+            break;
+          case e.shiftKey:  console.log("Has pulsado SHIFT");
+            break;
+          case e.metaKey:  console.log("Has pulsado META");
+            break;
+          default: control.innerHTML;
+        }else{
+
+        }
+      }
+    }
+    onkeypress = function (e) {
+      control.innerHTML = "Se ha pulsado el ASCII número " + e.charCode + ", " +
+                " que es el " + String.fromCharCode(e.charCode) + ", con" +
+                  " propiedad key " + e.key;
+    }
+    onkeyup = function (e) {
+      if (especial){
+        console.log("Con el número " + e.keyCode + " " +
+                  " que corresponde con " + e.key);
+      }
+    }
+  }
+    </script>
+  </head>
+  <body>
+    <h3>Pulsa una tecla</h3>
+    <div id="control">
+    </div>
+  </body>
+</html>

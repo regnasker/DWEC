@@ -1,17 +1,30 @@
 
 onload = function () {
   var form = document.forms[0];
+  /*Focos*/
+  var inputs = document.getElementsByTagName("input");
+  function enFoco(e){
+    e.target.style.outline = "none"
+    e.target.style.border = "purple solid 2px";
+  }
 
+  function sinFoco(e) {
+    e.target.style.outline = "none";
+    e.target.style.borderColor = "initial";
+    e.target.style.borderStyle = "inset";
+  }
+
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("focus", enFoco);
+    inputs[i].addEventListener("blur", sinFoco);
+
+  }
   form.onsubmit = function(e){
     var error = document.getElementsByClassName("errores")[0];
     var listaError = "";
     var compr = true;
     e.preventDefault();
 
-    /*Opcional*/
-    function enFoco(e){
-      e.target.style.outline = "red solid 1px";
-    }
     /*Validar nombres*/
     var nom = document.getElementById("nombre").value;
     console.log(nom);

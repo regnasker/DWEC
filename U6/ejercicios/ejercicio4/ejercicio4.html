@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+     onload = function(){
+
+       if (window.XMLHttpRequest) {
+           var xhr = new XMLHttpRequest();
+       }else if (ActiveXObject("Microsoft.XMLHTTP")){
+         var xhr = new ActiveXObject("Microsoft.XMLHTTP")
+       }
+
+       document.forms[0].onsubmit = function(e){
+           e.preventDefault();
+           var url = "LoginJSON.php";
+           xhr.open("POST",url,true);
+           xhr.onreadystatechange = function(){
+             if(xhr.readyState == 4 &&  xhr.status == 200){
+
+               var objJSON = JSON.parse(xhr.responseText);
+               var token = objJSON.token;
+               if (token == 5678) {
+                 localStorage.setItem("token",token);
+                 window.location.assign("home.html");
+               }else{
+                 var salida = "Mostramos las opciones para darse de alta o recuperar password";
+               }
+               document.getElementById("resultado").innerHTML = salida;
+
+
+             } else if(xhr.readyState == 4){
+               alert("Se ha producido un error al obtener los datos"
+               + "\n\nreadyState:" + xhr.readyState
+               + "\nstatus: " + xhr.status
+               + "\nheaders: " + xhr.getAllResponseHeaders());
+             }
+           }
+           var us = document.getElementById("usuario").value;
+           var pass = document.getElementById("pass").value;
+
+
+           function obtenDatosLogin(us,pass){
+             var strLogin = "usuario=" + encodeURIComponent(us) + "&password=" + encodeURIComponent(pass);
+             console.log(strLogin);
+             return strLogin;
+           }
+           // Por defecto, POST envía los datos con el formato url por lo que no tengo que especificarlo así:
+           // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+           var datosLogin = obtenDatosLogin(us ,pass);
+
+
+           xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+           xhr.send(datosLogin);
+         }
+     }
+    </script>
+  </head>
+  <body>
+    <div>
+      <form method="post">
+        <div>Usuario: <input type="text" id="usuario" name="usuario" placeholder="Introduce tu usuario..." maxlength="40"></input></div>
+        <div>Contraseña: <input type="password" id="pass" name="pass"></input></div>
+        <div id="resultado">Resultado :</div>
+        <input type="submit" name="boton" id="enviar" value="Enviar"></input>
+      <input type="submit" name="boton" value="Enviar">
+    </form>
+  </div>
+  </body>
+</html>

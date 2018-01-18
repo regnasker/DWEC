@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+      text-align: center;
+      }
+    </style>
+    <script type="text/javascript">
+      onload = function () {
+
+        if (window.XMLHttpRequest) {
+          var xhr = new XMLHttpRequest();
+        }else if(ActiveXObject("Microsoft.XMLHTTP")){
+          var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+
+          var rnd = Math.ceil(Math.random() * 4);
+          console.log(rnd);
+          var url = "noticia"+rnd+".txt";
+          xhr.open("GET",url,true);
+          xhr.onreadystatechange = function noticias(){
+            if (xhr.readyState == 4 && xhr.status == 200 ) {
+              not.innerHTML = xhr.responseText;
+
+            }else if(xhr.readyState == 4 && xhr.status != 200){
+              window.location.assign("404.html");
+            }
+            estados.innerHTML += xhr.statusText+ "<br>";
+            cabecera.innerHTML += xhr.getAllResponseHeaders()+ "<br>";
+            codigo.innerHTML += xhr.readyState;
+          }
+          xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Noticias</h1>
+    <h2 id="not"></h2>
+    <div id="estados">
+      <h3>Estados</h3>
+    </div>
+    <div id="cabecera">
+      <h3>Cabecera</h3>
+    </div>
+    <div id="codigo">
+      <h3>Codido</h3>
+    </div>
+  </body>
+</html>
